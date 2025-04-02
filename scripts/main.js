@@ -206,3 +206,41 @@ myInput.addEventListener('keydown', function (e) {
     // console.log(e)
     console.log(myInput.value)
 }) 
+
+
+// 비동기
+// console.log('hi')
+// callback 함수
+// setTimeout() : 몇 초 이후에 무슨 일을 시킬 때 사용
+// setTimeout(function(){console.log('1234')}, 1000)
+// console.log('bye')
+
+
+// request
+const URL = 'https://jsonplaceholder.typicode.com/todos/1'
+
+// 비동기 처리 방법 1 (Promise)
+// fetch : 외부로 요청을 보냄
+let response = fetch(URL)
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+// 비동기 처리 방법 2 (async await)
+async function fetchTodo(url) {
+    let res = await fetch(url)
+    let result = await res.json()
+    console.log(result)
+    // return result
+}
+console.log(fetchTodo(URL))
+
+
+let liArray = document.querySelectorAll('li') // li태그를 모두 가져옴
+// console.log(liArray)
+
+// liArray의 요소를 하나씩 꺼내서 함수 실행
+liArray.forEach(function(item){
+    item.addEventListener('click', function(e){
+        console.log(e.target) // target : 이벤트가 발생한 요소를 의미
+    })
+})

@@ -30,3 +30,6 @@ var myVariable = 10
 
 console.log(myVariable) //관리자창의 Consle에서 출력 => print문이라고 생각
 ```
+
+
+- [jsonplaceholder](https://jsonplaceholder.typicode.com/) : fake placeholder
